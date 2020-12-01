@@ -7,7 +7,7 @@ Challenge available [HERE](https://scrimba.com/learn/adventcalendar)
 
 1. Candies<br>
 Determine how many pieces of candy will be eaten by all te children together
-<br>
+
 Solution:
 ```javascript
 function candies(children, candy) {
