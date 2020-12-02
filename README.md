@@ -15,3 +15,19 @@ function candies(children, candy) {
 }
 ```
 
+2. Deposit Profit<br>
+Find out how long it would take for your balance to pass a specific treshold with the assumption that you don't make any additional deposit
+
+Solution:
+```
+function depositProfit(deposit, rate, threshold) {
+    let sum = 0;
+    let years = 0;
+    
+    while(sum < threshold) {
+        sum = sum + (sum*20/100)
+        years++;
+    }
+    return sum;
+}
+```
