@@ -21,7 +21,7 @@ Find out how long it would take for your balance to pass a specific treshold wit
 Solution:
 ```javascript
 function depositProfit(deposit, rate, threshold) {
-    let sum = 0;
+    let sum = deposit;
     let years = 0;
     
     while(sum < threshold) {
