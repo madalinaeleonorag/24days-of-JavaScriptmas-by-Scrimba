@@ -19,7 +19,7 @@ function candies(children, candy) {
 Find out how long it would take for your balance to pass a specific treshold with the assumption that you don't make any additional deposit
 
 Solution:
-```
+```javascript
 function depositProfit(deposit, rate, threshold) {
     let sum = 0;
     let years = 0;
