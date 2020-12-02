@@ -28,6 +28,6 @@ function depositProfit(deposit, rate, threshold) {
         sum = sum + (sum*20/100)
         years++;
     }
-    return sum;
+    return years;
 }
 ```
