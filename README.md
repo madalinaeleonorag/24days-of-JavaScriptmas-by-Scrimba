@@ -31,3 +31,13 @@ function depositProfit(deposit, rate, threshold) {
     return years;
 }
 ```
+
+3. Chunky Monkey<br>
+Write a function that splits an array into groups the same length of size and returns them as a two-dimensional array
+
+Solution:
+```javascript
+function chunkyMonkey(values, size) {
+    return ([[...values.slice(0, size)],[...values.slice(size, values.length)]]);
+}
+```
