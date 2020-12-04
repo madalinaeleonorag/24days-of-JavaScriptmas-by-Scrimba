@@ -41,3 +41,13 @@ function chunkyMonkey(values, size) {
     return ([[...values.slice(0, size)],[...values.slice(size, values.length)]]);
 }
 ```
+
+4. Century from year<br>
+Given a year, return a century it is in.
+
+Solution:
+```javascript
+function centuryFromYear(num) {
+    return Math.ceil(num/100) 
+}
+```
