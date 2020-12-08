@@ -101,7 +101,7 @@ Solution:
     </head>
     <body>
         <div class="dice">
-            <div class="dots dot"></div>
+            <div class="dots dot1"></div>
         </div>
     </body>
 </html>
@@ -109,7 +109,7 @@ Solution:
 ```javascript
 const dice = document.querySelector('.dice');
 const dots = document.querySelector('.dots');
-const dotsClasses = ["dot", "dot2", "dot3", "dot4", "dot5"];
+const dotsClasses = ["dot", "dot2", "dot3", "dot4", "dot5", "dot6"];
 let lastDots = "dot";
 
 function rollDice() {
@@ -143,7 +143,7 @@ body {
     margin: 40px;      
 }
 
-.dot {
+.dot1 {
     background-color: black;
 }
 
@@ -161,5 +161,9 @@ body {
 
 .dot5 {
     background-color: purple;
+}
+
+.dot6 {
+    background-color: blue;
 }
 ```
