@@ -51,3 +51,114 @@ function centuryFromYear(num) {
     return Math.ceil(num/100) 
 }
 ```
+
+5. Reverse a stringr<br>
+Reverse the provided string.
+
+Solution:
+```javascript
+function reverseAString(str) {
+    return str.split("").reverse().join('')
+}
+```
+
+6. Sort by length<br>
+Given an array of strings, sort them in the order of increasing lengths. 
+
+Solution:
+```javascript
+function sortByLength(strs) {
+   return strs.sort((a, b) => a.length - b.length)
+}
+```
+
+7. Count vowel consonant<br>
+Return the sum of all letters in the input string.
+
+Solution:
+```javascript
+function countVowelConsonant(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const chars = str.split('');
+  return total = chars.reduce((acc, char) => {
+      if(vowels.includes(char)) {
+          return acc + 1;
+      }
+      return acc + 2;
+  }, 0);
+}
+```
+
+8. Rolling dice<br>
+In this challenge a casino has asked you to make an online dice that works just like it would in real life. Using the pre-made dice face that represents ‘one’, make the faces for ‘two’, ‘three’, ‘four’, ‘five’ and ‘six’. Now when the users clicks the dice on the screen the dice is expected to show one of the faces randomly.
+
+Solution:
+```HTML
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.pack.js"></script>
+    </head>
+    <body>
+        <div class="dice">
+            <div class="dots dot"></div>
+        </div>
+    </body>
+</html>
+```
+```javascript
+const dice = document.querySelector('.dice');
+const dots = document.querySelector('.dots');
+const dotsClasses = ["dot", "dot2", "dot3", "dot4", "dot5"];
+let lastDots = "dot";
+
+function rollDice() {
+    dots.classList.remove(lastDots);
+    const randomClass = dotsClasses[Math.floor((Math.random() * 5))];
+    if (randomClass === lastDots) return;
+    
+    lastDots = randomClass;
+    dots.classList.add(randomClass);
+}
+
+dice.addEventListener('click', rollDice);
+```CSS
+body {
+    background-color: #AEB8FE;
+    display: flex;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: #EFE5DC;
+    margin: 100px;
+}
+
+.dots {
+    width: 15px;
+    height: 15px; 
+    margin: 40px;      
+}
+
+.dot {
+    background-color: black;
+}
+
+.dot2 {
+    background-color: red;
+}
+
+.dot3 {
+    background-color: yellow;
+}
+
+.dot4 {
+    background-color: green;
+}
+
+.dot5 {
+    background-color: purple;
+}
+```
