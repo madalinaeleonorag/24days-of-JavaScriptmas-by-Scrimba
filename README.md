@@ -122,6 +122,7 @@ function rollDice() {
 }
 
 dice.addEventListener('click', rollDice);
+```
 ```CSS
 body {
     background-color: #AEB8FE;
