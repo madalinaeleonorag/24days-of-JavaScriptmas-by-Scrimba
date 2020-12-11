@@ -167,3 +167,56 @@ body {
     background-color: blue;
 }
 ```
+
+9. Sum Odd Fibonacci Numbers<br>
+Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+
+Solution:
+```javascript
+function sumOddFibonacciNumbers(num) {
+    let sum = 0;
+    let previous = 0;
+    let current = 1;
+    while(current <= num) {
+        if(current % 2 === 1) {
+            sum += current;
+        }
+        const nextCurrent = cu
+    }
+    return sum;
+}
+
+10. Adjacent Elements Product<br>
+Given an array of integers, find the pair of adjacent moments that has the largest product and return that product.
+
+Solution:
+```javascript
+function adjacentElementsProduct(nums) {
+    let largestProduct = nums[0] * nums[1];
+    for(let i = 1; i < nums.length - 1; i++) {
+        const adjacentProduct = nums[i] * nums[i + 1];
+        
+        if(largestProduct < adjacentProduct) {
+            largestProduct = adjacentProduct;
+        }
+    }
+    return largestProduct;
+}
+```
+
+10. Adjacent Elements Product<br>
+Given an array of integers, find the pair of adjacent moments that has the largest product and return that product.
+
+Solution:
+```javascript
+function adjacentElementsProduct(nums) {
+    let largestProduct = nums[0] * nums[1];
+    for(let i = 1; i < nums.length - 1; i++) {
+        const adjacentProduct = nums[i] * nums[i + 1];
+        if(largestProduct < adjacentProduct) {
+            largestProduct = adjacentProduct;
+        }
+    }
+    return largestProduct;
+}
+```
