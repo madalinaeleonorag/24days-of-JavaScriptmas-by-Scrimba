@@ -220,3 +220,187 @@ function adjacentElementsProduct(nums) {
     return largestProduct;
 }
 ```
+
+11. Avoid Obstacles<br>
+Find the minimal length of the jump enough to avoid all the obstacles.
+
+Solution:
+```javascript
+function avoidObstacles(nums) {
+    const largestNum = nums.sort((a, b) => a-b)[nums.length - 1];
+    for (let i = 1; i <= largestNum + 1; i++) {
+        if(nums.every((value) => value % i !== 0)) {
+            return i;
+        } 
+    }
+}
+```
+
+12. Valid Time<br>
+Check if the given string is correct time representation of the 24-hour clock.
+
+Solution:
+```javascript
+function validTime(str) {
+    const [hours, minutes] = str.split(':');
+    if(parseInt(hours) > 23 || parseInt(hours) < 0) {
+        return false;
+    }
+    if(parseInt(minutes) > 59 || parseInt(minutes) < 0) {
+        return false;
+    }
+    return true;
+}
+```
+
+13. Extract Each Kht<br>
+Given array of integers, remove each kth element from it.
+
+Solution:
+```javascript
+function extractEachKth(nums, index) {
+    return nums.filter((value, i) => (i + 1) % index !== 0);
+}
+```
+
+14. Maximal Adjacent Difference<br>
+Given an array of integers, find the maximal absolute difference between any two of it's adjacent elements.
+
+Solution:
+```javascript
+function arrayMaximalAdjacentDifference(nums) {
+    let maxDifference = 0;
+    for(let i = 0; i < nums.length - 1; i++) {
+        const absoluteDifference = Math.abs(nums[i] - nums[i + 1]);
+        if(maxDifference < absoluteDifference) {
+            maxDifference = absoluteDifference;
+        }
+    }
+    return maxDifference;
+}
+```
+
+15. JavaScript Carousel<br>
+USe JS to make it function. Left & right arrrows should work. Bonus: Use CSS transitions.
+
+Solution:
+```javascript
+// javascript
+const gallery = document.getElementsByClassName('gallery')[0]
+const prevBtn = document.getElementsByClassName('previous')[0]
+const nextBtn = document.getElementsByClassName('next')[0]
+const galleryCardCount = document.getElementsByClassName('card').length
+
+let currentGalleryXOffset = 0
+const endGalleryXOffset = (galleryCardCount - 1) * -220
+
+prevBtn.addEventListener("click", galleryClickHandler)
+nextBtn.addEventListener("click", galleryClickHandler)
+
+function galleryClickHandler(event) {
+    let targetBtn = event.target.className
+    if (targetBtn == "previous" && currentGalleryXOffset < 0){
+        currentGalleryXOffset += 220
+    } else if (targetBtn == "next" && currentGalleryXOffset > endGalleryXOffset ) {
+        currentGalleryXOffset -= 220
+    }
+    
+    if (currentGalleryXOffset == 0) {
+        prevBtn.style.opacity = 0.3
+        prevBtn.style.cursor = 'default'
+    } else {
+        prevBtn.style.opacity = 1 //disabled
+        prevBtn.style.cursor = 'pointer'
+    } 
+    
+    if (currentGalleryXOffset == endGalleryXOffset) {
+        nextBtn.style.opacity = 0.3
+        nextBtn.style.cursor = 'default'
+    } else {
+        nextBtn.style.opacity = 1
+        nextBtn.style.cursor = 'pointer'
+    }
+
+    gallery.style.transform = `translateX(${currentGalleryXOffset}px)`
+}
+```
+```CSS
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Playfair Display';
+    display: grid;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+}
+
+.previous, .next {
+    width: 35px;
+}
+.previous {
+    opacity: .3;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20% 200px 20%;
+    place-content: center;
+}
+
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+.previous, .next {
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.gallery {
+    transform-style: preserve-3d;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    transform: translateX(0);
+    transition: transform 0.25s ease;
+}
+
+.card {
+    margin-right: 20px;
+    align-self: center;
+}
+```
+```HTML
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        
+        <div class="container">
+            <img src="previous.svg" class="previous" alt="previous image">
+            <div class="gallery-wrapper">
+                <div class="gallery">
+                    <img class="card current" src="presents.jpg" alt="Christmas Cookies">
+                    <img class="card" src="cookies.jpg" alt="Christmas Cookies">
+                    <img class="card" src="santa.jpg" alt="Christmas Cookies">
+                    <img class="card" src="candycane.jpg" alt="Christmas Cookies">
+                    <img class="card" src="reindeer.jpg" alt="Christmas Cookies">
+                </div>
+            </div>
+            <img src="next.svg" class="next" alt="next image">
+        
+        </div>
+        
+        <script src="index.pack.js"></script>
+    
+    </body>
+</html>
+```
