@@ -486,6 +486,14 @@ You have two integer arrays, a and b, and an integer target value v. Determine w
 Solution:
 ```javascript
 function sumOfTwo(nums1, nums2, value) {
-    //  write code here.
+    const longerArray = nums1.length > nums2.length ? nums1 : nums2;
+    const shorterArray = nums1.length > nums2.length ? nums2 : nums1;
+    let isSum = 0;
+    longerArray.forEach(item => {
+        shorterArray.forEach(item2 => {
+            if (item + item2 === value) isSum = isSum + 1;
+        })
+    })
+    return isSum != 0;
 }
 ```
