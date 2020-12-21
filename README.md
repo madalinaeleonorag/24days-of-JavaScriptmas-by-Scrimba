@@ -4,7 +4,6 @@ Level up JavaScript skills with a daily coding challenge from December 1st to 24
 
 Challenge available [HERE](https://scrimba.com/learn/adventcalendar)
 
-
 1. Candies<br>
 Determine how many pieces of candy will be eaten by all te children together
 
@@ -185,23 +184,6 @@ function sumOddFibonacciNumbers(num) {
     }
     return sum;
 }
-
-10. Adjacent Elements Product<br>
-Given an array of integers, find the pair of adjacent moments that has the largest product and return that product.
-
-Solution:
-```javascript
-function adjacentElementsProduct(nums) {
-    let largestProduct = nums[0] * nums[1];
-    for(let i = 1; i < nums.length - 1; i++) {
-        const adjacentProduct = nums[i] * nums[i + 1];
-        
-        if(largestProduct < adjacentProduct) {
-            largestProduct = adjacentProduct;
-        }
-    }
-    return largestProduct;
-}
 ```
 
 10. Adjacent Elements Product<br>
@@ -213,6 +195,7 @@ function adjacentElementsProduct(nums) {
     let largestProduct = nums[0] * nums[1];
     for(let i = 1; i < nums.length - 1; i++) {
         const adjacentProduct = nums[i] * nums[i + 1];
+        
         if(largestProduct < adjacentProduct) {
             largestProduct = adjacentProduct;
         }
@@ -281,11 +264,10 @@ function arrayMaximalAdjacentDifference(nums) {
 ```
 
 15. JavaScript Carousel<br>
-USe JS to make it function. Left & right arrrows should work. Bonus: Use CSS transitions.
+Use JS to make it function. Left & right arrrows should work. Bonus: Use CSS transitions.
 
 Solution:
 ```javascript
-// javascript
 const gallery = document.getElementsByClassName('gallery')[0]
 const prevBtn = document.getElementsByClassName('previous')[0]
 const nextBtn = document.getElementsByClassName('next')[0]
@@ -495,26 +477,6 @@ function arrayPreviousLess(nums) {
 }
 ```
 
-20. Alphabet Subsequence<br>
-Check whether the given string is a subsequence of the plaintext alphabet
-
-Solution:
-```javascript
-function alphabetSubsequence(str) {
-    const chars = str.split('');
-    const charCodes = chars.map((char) => char.charCodeAt(0));
-    if(new Set(charCodes).size !== charCodes.length) {
-        return false;
-    }
-    for (let i = 0; i < charCodes.length - 1; i++) {
-        if(charCodes[i] > charCodes[i + 1]) {
-            return false;
-        }
-    }
-    return true;
-}
-```
-
 21. Domain Type<br>
 You want to write a function that labels the domains as "commercial", "network" or "information" for .com, .org, .net or .info respectively. For the given list of the domains return the list of their labels.
 
@@ -536,5 +498,15 @@ function domainType(domains) {
         }
     }
     return domainTypes;
+}
+```
+
+22. Sum of 2<br>
+You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one numer is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false.
+
+Solution:
+```javascript
+function sumOfTwo(nums1, nums2, value) {
+    //  write code here.
 }
 ```
