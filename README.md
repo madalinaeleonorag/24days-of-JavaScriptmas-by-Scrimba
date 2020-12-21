@@ -51,7 +51,7 @@ function centuryFromYear(num) {
 }
 ```
 
-5. Reverse a stringr<br>
+5. Reverse a string<br>
 Reverse the provided string.
 
 Solution:
@@ -435,28 +435,7 @@ function arrayPreviousLess(nums) {
 }
 ```
 
-19. Array previous less<br>
-Given an array of integers, for each position i, search among the previous positions for the las position that contains a smaller value.
-
-Solution:
-```javascript
-function arrayPreviousLess(nums) {
-    const previousLess = [];
-    for(let i = nums.length -1; i >= 0; i--) {
-        for(let j = i; j >= 0; j--) {
-            if(nums[i] > nums[j]) {
-                previousLess.unshift(nums[j]);
-                break;
-            } else if (j === 0) {
-                previousLess.unshift(-1);
-            }
-        }
-    }
-    return previousLess;
-}
-```
-
-20. Alphabet Subsequence<br>
+19. Alphabet Subsequence<br>
 Check whether the given string is a subsequence of the plaintext alphabet
 
 Solution:
@@ -477,7 +456,7 @@ function arrayPreviousLess(nums) {
 }
 ```
 
-21. Domain Type<br>
+20. Domain Type<br>
 You want to write a function that labels the domains as "commercial", "network" or "information" for .com, .org, .net or .info respectively. For the given list of the domains return the list of their labels.
 
 Solution:
@@ -501,7 +480,7 @@ function domainType(domains) {
 }
 ```
 
-22. Sum of 2<br>
+21. Sum of 2<br>
 You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one numer is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false.
 
 Solution:
