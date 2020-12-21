@@ -404,3 +404,137 @@ img {
     </body>
 </html>
 ```
+
+16. Insert Dashes<br>
+Transform a given sentence into a new one with dashes between each two consecutive letters.
+
+Solution:
+```javascript
+function insertDashes(str) {
+    const words = str.split(' ');
+    const dashedWords = words.map((word) => {
+       const chars = word.split('');
+       
+       return chars.join('-'); 
+    });
+    return dashedWords.join(' ');
+}
+```
+
+17. Different symbols naive<br>
+Given a string, find the number of different characters in it.
+
+Solution:
+```javascript
+function differentSymbolsNaive(str) {
+   const chars = str.split('');
+   return new Set(chars).size;
+}
+```
+
+18. Array previous less<br>
+Given an array of integers, for each position i, search among the previous positions for the las position that contains a smaller value.
+
+Solution:
+```javascript
+function arrayPreviousLess(nums) {
+    const previousLess = [];
+    for(let i = nums.length -1; i >= 0; i--) {
+        for(let j = i; j >= 0; j--) {
+            if(nums[i] > nums[j]) {
+                previousLess.unshift(nums[j]);
+                break;
+            } else if (j === 0) {
+                previousLess.unshift(-1);
+            }
+        }
+    }
+    return previousLess;
+}
+```
+
+19. Array previous less<br>
+Given an array of integers, for each position i, search among the previous positions for the las position that contains a smaller value.
+
+Solution:
+```javascript
+function arrayPreviousLess(nums) {
+    const previousLess = [];
+    for(let i = nums.length -1; i >= 0; i--) {
+        for(let j = i; j >= 0; j--) {
+            if(nums[i] > nums[j]) {
+                previousLess.unshift(nums[j]);
+                break;
+            } else if (j === 0) {
+                previousLess.unshift(-1);
+            }
+        }
+    }
+    return previousLess;
+}
+```
+
+20. Alphabet Subsequence<br>
+Check whether the given string is a subsequence of the plaintext alphabet
+
+Solution:
+```javascript
+function arrayPreviousLess(nums) {
+    const previousLess = [];
+    for(let i = nums.length -1; i >= 0; i--) {
+        for(let j = i; j >= 0; j--) {
+            if(nums[i] > nums[j]) {
+                previousLess.unshift(nums[j]);
+                break;
+            } else if (j === 0) {
+                previousLess.unshift(-1);
+            }
+        }
+    }
+    return previousLess;
+}
+```
+
+20. Alphabet Subsequence<br>
+Check whether the given string is a subsequence of the plaintext alphabet
+
+Solution:
+```javascript
+function alphabetSubsequence(str) {
+    const chars = str.split('');
+    const charCodes = chars.map((char) => char.charCodeAt(0));
+    if(new Set(charCodes).size !== charCodes.length) {
+        return false;
+    }
+    for (let i = 0; i < charCodes.length - 1; i++) {
+        if(charCodes[i] > charCodes[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+21. Domain Type<br>
+You want to write a function that labels the domains as "commercial", "network" or "information" for .com, .org, .net or .info respectively. For the given list of the domains return the list of their labels.
+
+Solution:
+```javascript
+function domainType(domains) {
+    const domainTypes = [];
+    for(let i = 0; i < domains.length; i++) {
+        const urlPieces = domains[i].split('.');
+        const domain = urlPieces[urlPieces.length - 1];
+        if(domain === 'org') {
+            domainTypes.push('organization');   
+        } else if (domain === 'com') {
+            domainTypes.push('commercial');
+        } else if (domain === 'net') {
+            domainTypes.push('network');
+        } else if (domain === 'info') {
+            domainTypes.push('information');
+        }
+    }
+    return domainTypes;
+}
+```
