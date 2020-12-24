@@ -497,3 +497,124 @@ function sumOfTwo(nums1, nums2, value) {
     return isSum != 0;
 }
 ```
+
+22. Extract Matrix Column<br>
+Given a rectangular matrix and an integer column, return ana ray containing  the elements of the columnth column of the given matrix
+
+Solution:
+```javascript
+function extractMatrixColumn(matrix, column) {
+    return matrix.map( row => row[column]);
+}
+```
+
+23. Social media input challenge<br>
+Use JS to count characters. Dynamically show he characters used/remaining. Disable the Tweet button if maximum character limit is exceeded.
+
+Solution:
+```javascript
+let textArea = document.getElementById("string");
+const button = document.querySelector("#btn");
+function addDisableClass() {
+    button.classList.add("buttonDisabled");
+}
+function removeDisableClass() {
+    button.classList.remove("buttonDisabled");
+}
+function showText() {
+    let counterDisplay = document.getElementById("counterFooter");
+    let numberChars = textArea.value.length - 1;
+    counterDisplay.innerHTML = `${140 - numberChars}/140`;
+    if (numberChars > 140) {
+        button.disabled = true;
+        addDisableClass();
+        counterDisplay.style.color = "red";
+    } else if (numberChars >= 120 && numberChars <= 140) {
+        counterDisplay.style.color = "red";
+    } else {
+        button.disabled = false;
+        removeDisableClass();
+        counterDisplay.style.color = "white";
+    }
+}
+textArea.addEventListener("keydown", function (event) {
+    showText();
+});
+```
+```HTML
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+   <div class="container">
+  <textarea type="text" id="string" placeholder="Type in the box"></textarea>
+  <div id="counterFooter">140/140</div>
+
+    <button id="btn"><h2>Tweet</h2></button>
+</div>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+```
+```CSS
+body{
+  background-color: #023F6A;
+  font-family: sans-serif;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+textarea{
+  width:50%;
+  height: 30vh;
+  background-color: rgb(21, 32, 43);
+  color: #fff;
+  border-radius:10px;
+}
+textarea::placeholder{
+    color:#fff;
+}
+#counterFooter {
+  margin-top: 0.2rem;
+  font-size:0.8rem;
+  color: #fff;
+  margin-left:30%;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+button{
+  width:50%;
+  background-color: rgb(29, 161, 242);
+  border-radius: 10px;
+  padding: 0 10%;
+}
+button h2{
+    color: #fff;
+
+}
+.buttonDisabled {
+   opacity: .5;
+   cursor: default;
+}
+```
+
+24. Extract Matrix Column<br>
+Given a rectangular matrix and an integer column, return ana ray containing  the elements of the columnth column of the given matrix
+
+Solution:
+```javascript
+function sumOfTwo(nums1, nums2, value) {
+    const longerArray = nums1.length > nums2.length ? nums1 : nums2;
+    const shorterArray = nums1.length > nums2.length ? nums2 : nums1;
+    let isSum = 0;
+    longerArray.forEach(item => {
+        shorterArray.forEach(item2 => {
+            if (item + item2 === value) isSum = isSum + 1;
+        })
+    })
+    return isSum != 0;
+}
+```
