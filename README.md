@@ -499,7 +499,7 @@ function sumOfTwo(nums1, nums2, value) {
 ```
 
 22. Extract Matrix Column<br>
-Given a rectangular matrix and an integer column, return ana ray containing  the elements of the columnth column of the given matrix
+Given a rectangular matrix and an integer column, return ana ray containing  the elements of the columnth column of the given matrix.
 
 Solution:
 ```javascript
@@ -601,20 +601,93 @@ button h2{
 }
 ```
 
-24. Extract Matrix Column<br>
-Given a rectangular matrix and an integer column, return ana ray containing  the elements of the columnth column of the given matrix
+24. Test Your Agility<br>
+Use sleep() function. Show the player the numbers with .innerHTML. Don't forget, var pushed is defined globally and changes to true after the STOP button is pushed.
 
 Solution:
 ```javascript
-function sumOfTwo(nums1, nums2, value) {
-    const longerArray = nums1.length > nums2.length ? nums1 : nums2;
-    const shorterArray = nums1.length > nums2.length ? nums2 : nums1;
-    let isSum = 0;
-    longerArray.forEach(item => {
-        shorterArray.forEach(item2 => {
-            if (item + item2 === value) isSum = isSum + 1;
-        })
-    })
-    return isSum != 0;
+var pushed = false 
+var targetInt;
+var spinningElem = document.getElementById('spinning'); 
+document.getElementById("buttonPressed").addEventListener("click", buttonPressed);
+function buttonPressed(){
+    pushed = true;
+}
+function setTargetInt(){
+    var targetElem = document.getElementById('targetNum');
+    targetInt=Math.floor(Math.random() * 101)
+    targetElem.innerHTML = targetInt;
+}
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+const spin = async () => {
+    let i = 0;
+    while(i < 100 && !pushed) { 
+        await sleep(250)
+        ++i;
+        spinningElem.innerHTML = i;
+    }
+    stop(i); 
+}
+function stop(i){
+    var result = document.getElementById('result');
+    if(i !== targetInt) {
+        result.innerHTML = `Oh no! you lose off by  ${Math.abs(targetInt - i)}`; 
+    } else {
+        result.innerHTML = `DANG DANG DANG YOU GOT IT CHAMP`
+    }     
+}
+setTargetInt();
+spin()
+```
+```HTML
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="title">
+            <h1>Test your agility!</h1>
+            <h3>Push the button at the right time to hit the target number (0-100)</h3>
+        </div>
+        <div class="target">
+            <h3>Target Number: </h3> &nbsp;<h3 id="targetNum"></h3>
+        </div>
+        <div class="spin">
+            <h3>Spining Wheel: </h3> &nbsp;<h3 id="spinning"></h3>
+        </div>
+        <button id="buttonPressed">STOP</button>
+        <h4 id="result"></h4>
+        <script src="index.pack.js"></script>
+    </body>
+</html>
+```
+```CSS
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    text-align: center;
+}
+
+.target, .spin{
+    display: flex;
+    justify-content: center
+}
+
+#result{
+    color: blue;
+    text-align: center;
+}
+
+button{
+    height: 32px;
+    border: 1.5px solid aquamarine;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 ```
