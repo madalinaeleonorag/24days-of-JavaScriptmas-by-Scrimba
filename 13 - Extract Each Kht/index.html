@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 13 - Extract Each Kht</title>
+  </head>
+  <body>
+    <!-- Given array of integers, remove each kth element from it. -->
+    <script>
+      function extractEachKth(nums, index) {
+        return nums.filter((value, i) => (i + 1) % index !== 0);
+      }
+    </script>
+  </body>
+</html>

@@ -13,7 +13,9 @@ function candies(children, candy) {
     return Math.floor(candy/children) * children;
 }
 ```
-
+<br>
+![''](./screenshot/1.jpg)
+<br>
 2. Deposit Profit<br>
 Find out how long it would take for your balance to pass a specific treshold with the assumption that you don't make any additional deposit
 

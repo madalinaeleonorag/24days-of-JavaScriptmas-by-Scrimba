@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 21 - Sum of 2</title>
+  </head>
+  <body>
+    <!-- You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one numer is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false. -->
+    <script>
+      function sumOfTwo(nums1, nums2, value) {
+        const longerArray = nums1.length > nums2.length ? nums1 : nums2;
+        const shorterArray = nums1.length > nums2.length ? nums2 : nums1;
+        let isSum = 0;
+        longerArray.forEach((item) => {
+          shorterArray.forEach((item2) => {
+            if (item + item2 === value) isSum = isSum + 1;
+          });
+        });
+        return isSum != 0;
+      }
+    </script>
+  </body>
+</html>

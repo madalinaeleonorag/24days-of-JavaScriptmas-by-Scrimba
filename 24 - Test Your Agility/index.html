@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 24 - Test Your Agility</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Test your agility!</h1>
+      <h3>
+        Push the button at the right time to hit the target number (0-100)
+      </h3>
+    </div>
+    <div class="target">
+      <h3>Target Number:</h3>
+      &nbsp;
+      <h3 id="targetNum"></h3>
+    </div>
+    <div class="spin">
+      <h3>Spining Wheel:</h3>
+      &nbsp;
+      <h3 id="spinning"></h3>
+    </div>
+    <button id="buttonPressed">STOP</button>
+    <h4 id="result"></h4>
+    <script src="index.pack.js"></script>
+    <!-- Use sleep() function. Show the player the numbers with .innerHTML. Don't forget, var pushed is defined globally and changes to true after the STOP button is pushed. -->
+    <script>
+      var pushed = false;
+      var targetInt;
+      var spinningElem = document.getElementById("spinning");
+      document
+        .getElementById("buttonPressed")
+        .addEventListener("click", buttonPressed);
+      function buttonPressed() {
+        pushed = true;
+      }
+      function setTargetInt() {
+        var targetElem = document.getElementById("targetNum");
+        targetInt = Math.floor(Math.random() * 101);
+        targetElem.innerHTML = targetInt;
+      }
+      const sleep = (milliseconds) => {
+        return new Promise((resolve) => setTimeout(resolve, milliseconds));
+      };
+      const spin = async () => {
+        let i = 0;
+        while (i < 100 && !pushed) {
+          await sleep(250);
+          ++i;
+          spinningElem.innerHTML = i;
+        }
+        stop(i);
+      };
+      function stop(i) {
+        var result = document.getElementById("result");
+        if (i !== targetInt) {
+          result.innerHTML = `Oh no! you lose off by  ${Math.abs(
+            targetInt - i
+          )}`;
+        } else {
+          result.innerHTML = `DANG DANG DANG YOU GOT IT CHAMP`;
+        }
+      }
+      setTargetInt();
+      spin();
+    </script>
+  </body>
+</html>

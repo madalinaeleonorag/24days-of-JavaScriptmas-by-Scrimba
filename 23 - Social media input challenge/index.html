@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 23 - Social media input challenge</title>
+  </head>
+  <body>
+    <div class="container">
+      <textarea
+        type="text"
+        id="string"
+        placeholder="Type in the box"
+      ></textarea>
+      <div id="counterFooter">140/140</div>
+      <button id="btn"><h2>Tweet</h2></button>
+    </div>
+    <script src="index.pack.js"></script>
+    <!-- Use JS to count characters. Dynamically show he characters used/remaining. Disable the Tweet button if maximum character limit is exceeded. -->
+    <script>
+      let textArea = document.getElementById("string");
+      const button = document.querySelector("#btn");
+      function addDisableClass() {
+        button.classList.add("buttonDisabled");
+      }
+      function removeDisableClass() {
+        button.classList.remove("buttonDisabled");
+      }
+      function showText() {
+        let counterDisplay = document.getElementById("counterFooter");
+        let numberChars = textArea.value.length - 1;
+        counterDisplay.innerHTML = `${140 - numberChars}/140`;
+        if (numberChars > 140) {
+          button.disabled = true;
+          addDisableClass();
+          counterDisplay.style.color = "red";
+        } else if (numberChars >= 120 && numberChars <= 140) {
+          counterDisplay.style.color = "red";
+        } else {
+          button.disabled = false;
+          removeDisableClass();
+          counterDisplay.style.color = "white";
+        }
+      }
+      textArea.addEventListener("keydown", function (event) {
+        showText();
+      });
+    </script>
+  </body>
+</html>

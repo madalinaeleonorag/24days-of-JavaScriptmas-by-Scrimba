@@ -1,0 +1,42 @@
+body {
+  background-color: #aeb8fe;
+  display: flex;
+}
+
+.dice {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #efe5dc;
+  margin: 100px;
+}
+
+.dots {
+  width: 15px;
+  height: 15px;
+  margin: 40px;
+}
+
+.dot1 {
+  background-color: black;
+}
+
+.dot2 {
+  background-color: red;
+}
+
+.dot3 {
+  background-color: yellow;
+}
+
+.dot4 {
+  background-color: green;
+}
+
+.dot5 {
+  background-color: purple;
+}
+
+.dot6 {
+  background-color: blue;
+}

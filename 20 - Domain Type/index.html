@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 20 - Domain Type</title>
+  </head>
+  <body>
+    <!-- You want to write a function that labels the domains as "commercial", "network" or "information" for .com, .org, .net or .info respectively. For the given list of the domains return the list of their labels. -->
+    <script>
+      function domainType(domains) {
+        const domainTypes = [];
+        for (let i = 0; i < domains.length; i++) {
+          const urlPieces = domains[i].split(".");
+          const domain = urlPieces[urlPieces.length - 1];
+          if (domain === "org") {
+            domainTypes.push("organization");
+          } else if (domain === "com") {
+            domainTypes.push("commercial");
+          } else if (domain === "net") {
+            domainTypes.push("network");
+          } else if (domain === "info") {
+            domainTypes.push("information");
+          }
+        }
+        return domainTypes;
+      }
+    </script>
+  </body>
+</html>

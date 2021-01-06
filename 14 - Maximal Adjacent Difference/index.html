@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 14 - Maximal Adjacent Difference</title>
+  </head>
+  <body>
+    <!-- Given an array of integers, find the maximal absolute difference between any two of it's adjacent elements. -->
+    <script>
+      function arrayMaximalAdjacentDifference(nums) {
+        let maxDifference = 0;
+        for (let i = 0; i < nums.length - 1; i++) {
+          const absoluteDifference = Math.abs(nums[i] - nums[i + 1]);
+          if (maxDifference < absoluteDifference) {
+            maxDifference = absoluteDifference;
+          }
+        }
+        return maxDifference;
+      }
+    </script>
+  </body>
+</html>

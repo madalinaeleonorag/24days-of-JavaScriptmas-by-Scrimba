@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 17 - Different symbols naive</title>
+  </head>
+  <body>
+    <!-- Given a string, find the number of different characters in it. -->
+    <script>
+      function differentSymbolsNaive(str) {
+        const chars = str.split("");
+        return new Set(chars).size;
+      }
+    </script>
+  </body>
+</html>

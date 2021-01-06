@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 2 - Deposit Profit</title>
+  </head>
+  <body>
+    <!-- Find out how long it would take for your balance to pass a specific treshold with the assumption that you don't make any additional deposit -->
+    <script>
+      function depositProfit(deposit, rate, threshold) {
+        let sum = deposit;
+        let years = 0;
+
+        while (sum < threshold) {
+          sum = sum + (sum * 20) / 100;
+          years++;
+        }
+        return years;
+      }
+    </script>
+  </body>
+</html>

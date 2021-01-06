@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 19 - Alphabet Subsequence</title>
+  </head>
+  <body>
+    <!-- Check whether the given string is a subsequence of the plaintext alphabet -->
+    <script>
+      function arrayPreviousLess(nums) {
+        const previousLess = [];
+        for (let i = nums.length - 1; i >= 0; i--) {
+          for (let j = i; j >= 0; j--) {
+            if (nums[i] > nums[j]) {
+              previousLess.unshift(nums[j]);
+              break;
+            } else if (j === 0) {
+              previousLess.unshift(-1);
+            }
+          }
+        }
+        return previousLess;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 7 - Count vowel consonant</title>
+  </head>
+  <body>
+    <!-- Return the sum of all letters in the input string. -->
+    <script>
+      function countVowelConsonant(str) {
+        const vowels = ["a", "e", "i", "o", "u"];
+        const chars = str.split("");
+        return (total = chars.reduce((acc, char) => {
+          if (vowels.includes(char)) {
+            return acc + 1;
+          }
+          return acc + 2;
+        }, 0));
+      }
+    </script>
+  </body>
+</html>

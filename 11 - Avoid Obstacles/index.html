@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Day 11 - Avoid Obstacles</title>
+  </head>
+  <body>
+    <!-- Find the minimal length of the jump enough to avoid all the obstacles. -->
+    <script>
+      function avoidObstacles(nums) {
+        const largestNum = nums.sort((a, b) => a - b)[nums.length - 1];
+        for (let i = 1; i <= largestNum + 1; i++) {
+          if (nums.every((value) => value % i !== 0)) {
+            return i;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

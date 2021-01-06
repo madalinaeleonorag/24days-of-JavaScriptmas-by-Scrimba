@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.pack.js"></script>
+    <title>Day 8 - Rolling dice</title>
+  </head>
+  <body>
+    <div class="dice">
+      <div class="dots dot1"></div>
+    </div>
+    <!-- In this challenge a casino has asked you to make an online dice that works just like it would in real life. Using the pre-made dice face that represents ‘one’, make the faces for ‘two’, ‘three’, ‘four’, ‘five’ and ‘six’. Now when the users clicks the dice on the screen the dice is expected to show one of the faces randomly. -->
+    <script>
+      const dice = document.querySelector(".dice");
+      const dots = document.querySelector(".dots");
+      const dotsClasses = ["dot", "dot2", "dot3", "dot4", "dot5", "dot6"];
+      let lastDots = "dot";
+
+      function rollDice() {
+        dots.classList.remove(lastDots);
+        const randomClass = dotsClasses[Math.floor(Math.random() * 5)];
+        if (randomClass === lastDots) return;
+
+        lastDots = randomClass;
+        dots.classList.add(randomClass);
+      }
+
+      dice.addEventListener("click", rollDice);
+    </script>
+  </body>
+</html>
