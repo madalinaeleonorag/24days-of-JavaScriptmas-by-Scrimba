@@ -4,12 +4,23 @@
     <title>Day 3 - Chunky Monkey</title>
   </head>
   <body>
-    <!-- Write a function that splits an array into groups the same length of size and returns them as a two-dimensional array -->
+    <div class="content">
+      <p>Split an array into groups the same length of size</p>
+      <input type="text" id="splitText" placeholder="Text to split" />
+      <input type="text" id="splitSize" placeholder="Split size" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="chunkyMonkey()">
+        Split
+      </button>
+    </div>
+
     <script>
-      function chunkyMonkey(values, size) {
-        return [
-          [...values.slice(0, size)],
-          [...values.slice(size, values.length)],
+      function chunkyMonkey() {
+        const splitText = document.getElementById("splitText").value;
+        const splitSize = document.getElementById("splitSize").value;
+        document.getElementById("answer").innerHTML = [
+          [...splitText.slice(0, splitSize)],
+          [...splitText.slice(splitSize, splitText.length)],
         ];
       }
     </script>
