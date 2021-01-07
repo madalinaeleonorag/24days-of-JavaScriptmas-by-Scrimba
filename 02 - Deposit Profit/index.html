@@ -4,9 +4,22 @@
     <title>Day 2 - Deposit Profit</title>
   </head>
   <body>
-    <!-- Find out how long it would take for your balance to pass a specific treshold with the assumption that you don't make any additional deposit -->
+    <div class="content">
+      <p>how long it would take for your get your dream gift?</p>
+      <input type="text" id="deposit" placeholder="Deposit" />
+      <input type="text" id="rate" placeholder="Rate" />
+      <input type="text" id="threshold" placeholder="Threshold" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="depositProfit()">
+        Calculate
+      </button>
+    </div>
     <script>
-      function depositProfit(deposit, rate, threshold) {
+      function depositProfit() {
+        const deposit = document.getElementById("deposit").value;
+        const rate = document.getElementById("rate").value;
+        const threshold = document.getElementById("threshold").value;
+
         let sum = deposit;
         let years = 0;
 
@@ -14,7 +27,10 @@
           sum = sum + (sum * 20) / 100;
           years++;
         }
-        return years;
+
+        document.getElementById(
+          "answer"
+        ).innerHTML = `It wil take you ${years} years!`;
       }
     </script>
   </body>

@@ -9,7 +9,7 @@ body {
   background: white;
   margin: auto;
   width: 30%;
-  box-shadow: 0px 0px 0px 10px #fa996e57;
+  box-shadow: 0px 0px 0px 10px #ff00004d;
   height: 50%;
   display: flex;
   flex-flow: column;
@@ -30,18 +30,18 @@ p {
     border: none;
     cursor: pointer;
     box-shadow: 0px 0px 8px -6px black;
-    background-color: #fa996e57;
+    background-color: #ff00004d;
 }
 .calculate-button:hover {
-    background-color: #fa996e9c;
+    background-color: #ff0000;
 }
 input {
-    border-color: #fa996e57;
+    border-color: #ff00004d;
     margin: 5px;
     width: -webkit-fill-available;
 }
 #answer {
     margin-top: 20px;
     font-weight: bold;
-    color: orange;
+    color: #ff0000;
 }
