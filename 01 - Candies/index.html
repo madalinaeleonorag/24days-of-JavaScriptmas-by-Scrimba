@@ -4,11 +4,33 @@
     <title>Day 1 - Candies</title>
   </head>
   <body>
-    <!-- Determine how many pieces of candy will be eaten by all te children together -->
+    <div class="content">
+      <p>
+        How many candies will be eaten if all childrens will receive an equal
+        quantity
+      </p>
+      <input
+        type="text"
+        id="childrens"
+        placeholder="How many childrens are here?"
+      />
+      <input
+        type="text"
+        id="candies"
+        placeholder="How many candies are in total?"
+      />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="candies()">Calculate</button>
+    </div>
 
     <script>
-      function candies(children, candy) {
-        return Math.floor(candy / children) * children;
+      function candies() {
+        const children = document.getElementById("childrens").value;
+        const candy = document.getElementById("candies").value;
+        const answer = Math.floor(candy / children) * children;
+        document.getElementById(
+          "answer"
+        ).innerHTML = `${answer} candies will be eaten!`;
       }
     </script>
   </body>
