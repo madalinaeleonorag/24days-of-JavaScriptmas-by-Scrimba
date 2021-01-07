@@ -4,10 +4,19 @@
     <title>Day 4 - Century from year</title>
   </head>
   <body>
-    <!-- Given a year, return a century it is in. -->
+    <div class="content">
+      <p>Find the century of the year</p>
+      <input type="text" id="year" placeholder="Year" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="centuryFromYear()">
+        Calculate
+      </button>
+    </div>
+
     <script>
-      function centuryFromYear(num) {
-        return Math.ceil(num / 100);
+      function centuryFromYear() {
+        const num = document.getElementById("year").value;
+        document.getElementById("answer").innerHTML = Math.ceil(num / 100);
       }
     </script>
   </body>
