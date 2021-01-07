@@ -4,10 +4,18 @@
     <title>Day 5 - Reverse a string</title>
   </head>
   <body>
-    <!-- Reverse the provided string. -->
+    <div class="content">
+      <p>Find the reverse of a string</p>
+      <input type="text" id="string" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="reverseAString()">
+        Reverse
+      </button>
+    </div>
     <script>
-      function reverseAString(str) {
-        return str.split("").reverse().join("");
+      function reverseAString() {
+        const str = document.getElementById("string").value;
+        document.getElementById("answer").innerHTML = str.split("").reverse().join("");
       }
     </script>
   </body>
