@@ -4,17 +4,34 @@
     <title>Day 12 - Valid Time</title>
   </head>
   <body>
-    <!-- Check if the given string is correct time representation of the 24-hour clock. -->
+    <div class="content">
+      <p>
+        Is correct time representation of the 24-hour clock?
+      </p>
+      <input type="text" id="number" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="validTime()">
+        Find
+      </button>
+    </div>
+
     <script>
-      function validTime(str) {
+      function validTime() {
+        const str = document.getElementById("number").value;
         const [hours, minutes] = str.split(":");
+        let response;
         if (parseInt(hours) > 23 || parseInt(hours) < 0) {
-          return false;
+          response = false;
+        } else {
+          response = true;
         }
         if (parseInt(minutes) > 59 || parseInt(minutes) < 0) {
-          return false;
+          response = false;
+        } else {
+          response = true;
         }
-        return true;
+        
+        document.getElementById("answer").innerHTML = response;
       }
     </script>
   </body>
