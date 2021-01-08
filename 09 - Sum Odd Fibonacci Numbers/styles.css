@@ -2,4 +2,46 @@ body {
     background: url(bg.jpg);
     background-size: cover;
     background-position: center;
-}
+    display: flex;
+  }
+  .content {
+    text-align-last: center;
+    background: white;
+    margin: auto;
+    width: 30%;
+    box-shadow: 0px 0px 0px 10px #6e5d2380;
+    height: 50%;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  p {
+    font-family: "Brush Script MT";
+    font-size: 1.5rem;
+    margin: 24px;
+  }
+  .calculate-button {
+      margin: 24px;
+      width: fit-content;
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0px 0px 8px -6px black;
+      background-color:#6e5d2380;
+  }
+  .calculate-button:hover {
+      background-color: #6e5d23;
+  }
+  input {
+      border-color:#6e5d2380;
+      margin: 5px;
+      width: -webkit-fill-available;
+  }
+  #answer {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #6e5d23;
+  }

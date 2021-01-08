@@ -4,19 +4,36 @@
     <title>Day 9 - Sum Odd Fibonacci Numbers</title>
   </head>
   <body>
-    <!-- Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num. -->
+    <div class="content">
+      <p>
+        Return the sum of all odd Fibonacci numbers that are less than or equal
+        to your number
+      </p>
+      <input type="number" id="number" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="sumOddFibonacciNumbers()">
+        Sum
+      </button>
+    </div>
+
     <script>
-      function sumOddFibonacciNumbers(num) {
+      function sumOddFibonacciNumbers() {
+        const num = document.getElementById("number").value;
         let sum = 0;
         let previous = 0;
         let current = 1;
+
         while (current <= num) {
           if (current % 2 === 1) {
             sum += current;
           }
-          const nextCurrent = cu;
+
+          const nextValue = current + previous;
+          previous = current;
+          current = nextValue;
         }
-        return sum;
+
+        document.getElementById("answer").innerHTML = sum;
       }
     </script>
   </body>
