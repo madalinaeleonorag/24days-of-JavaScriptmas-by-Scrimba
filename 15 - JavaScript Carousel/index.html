@@ -4,26 +4,25 @@
     <title>Day 15 - JavaScript Carousel</title>
   </head>
   <body>
+    <div class="content">
     <div class="container">
       <img src="previous.svg" class="previous" alt="previous image" />
       <div class="gallery-wrapper">
         <div class="gallery">
           <img
             class="card current"
-            src="presents.jpg"
+            src="present.png"
             alt="Christmas Cookies"
           />
-          <img class="card" src="cookies.jpg" alt="Christmas Cookies" />
-          <img class="card" src="santa.jpg" alt="Christmas Cookies" />
-          <img class="card" src="candycane.jpg" alt="Christmas Cookies" />
-          <img class="card" src="reindeer.jpg" alt="Christmas Cookies" />
+          <img class="card" src="candycane.png" alt="Christmas Cookies" />
+          <img class="card" src="reindeer.png" alt="Christmas Cookies" />
         </div>
       </div>
       <img src="next.svg" class="next" alt="next image" />
     </div>
+    </div>
 
     <script src="index.pack.js"></script>
-    <!-- Use JS to make it function. Left & right arrrows should work. Bonus: Use CSS transitions. -->
     <script>
       const gallery = document.getElementsByClassName("gallery")[0];
       const prevBtn = document.getElementsByClassName("previous")[0];
