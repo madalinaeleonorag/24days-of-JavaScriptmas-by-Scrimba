@@ -4,9 +4,20 @@
     <title>Day 10 - Adjacent Elements Product</title>
   </head>
   <body>
-    <!-- Given an array of integers, find the pair of adjacent moments that has the largest product and return that product. -->
+    <div class="content">
+      <p>
+        Find the pair of adjacent moments that has the largest product
+      </p>
+      <input type="text" id="number" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="adjacentElementsProduct()">
+        Find
+      </button>
+    </div>
+
     <script>
-      function adjacentElementsProduct(nums) {
+      function adjacentElementsProduct() {
+        const nums = document.getElementById("number").value.split(" ");
         let largestProduct = nums[0] * nums[1];
         for (let i = 1; i < nums.length - 1; i++) {
           const adjacentProduct = nums[i] * nums[i + 1];
@@ -15,7 +26,7 @@
             largestProduct = adjacentProduct;
           }
         }
-        return largestProduct;
+        document.getElementById("answer").innerHTML = largestProduct;
       }
     </script>
   </body>
