@@ -4,11 +4,22 @@
     <title>Day 17 - Different symbols naive</title>
   </head>
   <body>
-    <!-- Given a string, find the number of different characters in it. -->
+    <div class="content">
+      <p>
+        Find the number of different characters
+      </p>
+      <input type="text" id="textToDo" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="differentSymbolsNaive()">
+        Find
+      </button>
+    </div>
+
     <script>
-      function differentSymbolsNaive(str) {
+      function differentSymbolsNaive() {
+        const str = document.getElementById("textToDo").value;
         const chars = str.split("");
-        return new Set(chars).size;
+        document.getElementById("answer").innerHTML = new Set(chars).size;
       }
     </script>
   </body>
