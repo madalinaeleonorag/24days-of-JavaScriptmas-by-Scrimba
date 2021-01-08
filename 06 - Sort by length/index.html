@@ -4,10 +4,19 @@
     <title>Day 6 - Sort by length</title>
   </head>
   <body>
-    <!-- Given an array of strings, sort them in the order of increasing lengths. -->
+    <div class="content">
+      <p>Sort strings in order of increasing length</p>
+      <input type="text" id="string" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="sortByLength()">
+        Reverse
+      </button>
+    </div>
+
     <script>
-      function sortByLength(strs) {
-        return strs.sort((a, b) => a.length - b.length);
+      function sortByLength() {
+        const strs = document.getElementById("string").value;
+        document.getElementById("answer").innerHTML = strs.split(" ").sort((a, b) => a.length - b.length);
       }
     </script>
   </body>
