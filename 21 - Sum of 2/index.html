@@ -4,9 +4,24 @@
     <title>Day 21 - Sum of 2</title>
   </head>
   <body>
-    <!-- You have two integer arrays, a and b, and an integer target value v. Determine whether there is a pair of numbers, where one numer is taken from a and the other from b, that can be added together to get a sum of v. Return true if such a pair exists, otherwise return false. -->
+    <div class="content">
+      <p>
+        Whether there is a pair of sub-numbers?
+      </p>
+      <input type="text" id="num1" placeholder="Text" />
+      <input type="text" id="num2" placeholder="Text" />
+      <input type="text" id="valueidk" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="sumOfTwo()">
+        Find
+      </button>
+    </div>
+
     <script>
-      function sumOfTwo(nums1, nums2, value) {
+      function sumOfTwo() {
+        const nums1 = document.getElementById("num1").value.split(" ");
+        const nums2 = document.getElementById("num2").value.split(" ");
+        const value = document.getElementById("valueidk").value;
         const longerArray = nums1.length > nums2.length ? nums1 : nums2;
         const shorterArray = nums1.length > nums2.length ? nums2 : nums1;
         let isSum = 0;
@@ -15,7 +30,7 @@
             if (item + item2 === value) isSum = isSum + 1;
           });
         });
-        return isSum != 0;
+        document.getElementById("answer").innerHTML = isSum != 0;
       }
     </script>
   </body>

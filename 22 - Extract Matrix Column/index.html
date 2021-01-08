@@ -4,10 +4,23 @@
     <title>Day 22 - Extract Matrix Column</title>
   </head>
   <body>
-    <!-- Given a rectangular matrix and an integer column, return ana ray containing the elements of the columnth column of the given matrix. -->
+    <div class="content">
+      <p>
+        Find the column of the matrix
+      </p>
+      <input type="text" id="matrix" placeholder="Text" />
+      <input type="text" id="column" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="extractMatrixColumn()">
+        Label them
+      </button>
+    </div>
+
     <script>
-      function extractMatrixColumn(matrix, column) {
-        return matrix.map((row) => row[column]);
+      function extractMatrixColumn() {
+        const matrix = JSON.parse(document.getElementById("matrix").value);
+        const column = document.getElementById("column").value.split(" ");
+        document.getElementById("answer").innerHTML = matrix.map((row) => row[column]);
       }
     </script>
   </body>
