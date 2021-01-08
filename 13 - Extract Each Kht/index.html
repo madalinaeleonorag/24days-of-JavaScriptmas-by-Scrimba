@@ -4,10 +4,21 @@
     <title>Day 13 - Extract Each Kht</title>
   </head>
   <body>
-    <!-- Given array of integers, remove each kth element from it. -->
+    <div class="content">
+      <p>
+        Remove each kth element from your text
+      </p>
+      <input type="text" id="number" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="extractEachKth()">
+        Find
+      </button>
+    </div>
+
     <script>
-      function extractEachKth(nums, index) {
-        return nums.filter((value, i) => (i + 1) % index !== 0);
+      function extractEachKth() {
+        const nums = document.getElementById("number").value.split(" ");
+        document.getElementById("answer").innerHTML = nums.filter((value, i) => (i + 1) % i !== 0);
       }
     </script>
   </body>

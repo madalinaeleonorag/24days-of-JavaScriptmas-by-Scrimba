@@ -4,13 +4,24 @@
     <title>Day 11 - Avoid Obstacles</title>
   </head>
   <body>
-    <!-- Find the minimal length of the jump enough to avoid all the obstacles. -->
+    <div class="content">
+      <p>
+        Minimal length of the jump?
+      </p>
+      <input type="text" id="number" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="avoidObstacles()">
+        Find
+      </button>
+    </div>
+
     <script>
-      function avoidObstacles(nums) {
+      function avoidObstacles() {
+        const nums = document.getElementById("number").value.split(" ");
         const largestNum = nums.sort((a, b) => a - b)[nums.length - 1];
         for (let i = 1; i <= largestNum + 1; i++) {
-          if (nums.every((value) => value % i !== 0)) {
-            return i;
+          if (nums.every((value) => parseInt(value) % i !== 0)) {
+            document.getElementById("answer").innerHTML = i;
           }
         }
       }
