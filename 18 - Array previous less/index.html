@@ -4,9 +4,20 @@
     <title>Day 18 - Array previous less</title>
   </head>
   <body>
-    <!-- Given an array of integers, for each position i, search among the previous positions for the las position that contains a smaller value. -->
+    <div class="content">
+      <p>
+        Search among the previous positions for the las position that contains a smaller value
+      </p>
+      <input type="text" id="textToDo" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="arrayPreviousLess()">
+        Find
+      </button>
+    </div>
+
     <script>
-      function arrayPreviousLess(nums) {
+      function arrayPreviousLess() {
+        const nums = document.getElementById("textToDo").value.split(" ");
         const previousLess = [];
         for (let i = nums.length - 1; i >= 0; i--) {
           for (let j = i; j >= 0; j--) {
@@ -18,7 +29,7 @@
             }
           }
         }
-        return previousLess;
+        document.getElementById("answer").innerHTML = previousLess;
       }
     </script>
   </body>
