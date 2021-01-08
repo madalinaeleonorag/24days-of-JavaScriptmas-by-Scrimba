@@ -4,9 +4,20 @@
     <title>Day 20 - Domain Type</title>
   </head>
   <body>
-    <!-- You want to write a function that labels the domains as "commercial", "network" or "information" for .com, .org, .net or .info respectively. For the given list of the domains return the list of their labels. -->
+    <div class="content">
+      <p>
+        Label the domains
+      </p>
+      <input type="text" id="textToDo" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="domainType()">
+        Label them
+      </button>
+    </div>
+
     <script>
-      function domainType(domains) {
+      function domainType() {
+        const domains = document.getElementById("textToDo").value.split(" ");
         const domainTypes = [];
         for (let i = 0; i < domains.length; i++) {
           const urlPieces = domains[i].split(".");
@@ -21,7 +32,7 @@
             domainTypes.push("information");
           }
         }
-        return domainTypes;
+        document.getElementById("answer").innerHTML = domainTypes;
       }
     </script>
   </body>
