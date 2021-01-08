@@ -4,9 +4,20 @@
     <title>Day 19 - Alphabet Subsequence</title>
   </head>
   <body>
-    <!-- Check whether the given string is a subsequence of the plaintext alphabet -->
+    <div class="content">
+      <p>
+        Your string is a subsequence of the plaintext alphabet?
+      </p>
+      <input type="text" id="textToDo" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="arrayPreviousLess()">
+        Find
+      </button>
+    </div>
+
     <script>
-      function arrayPreviousLess(nums) {
+      function arrayPreviousLess() {
+        const nums = document.getElementById("textToDo").value.split(" ");
         const previousLess = [];
         for (let i = nums.length - 1; i >= 0; i--) {
           for (let j = i; j >= 0; j--) {
@@ -18,7 +29,7 @@
             }
           }
         }
-        return previousLess;
+        document.getElementById("answer").innerHTML = previousLess;
       }
     </script>
   </body>
