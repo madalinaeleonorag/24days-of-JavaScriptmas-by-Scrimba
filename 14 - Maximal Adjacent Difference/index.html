@@ -4,9 +4,21 @@
     <title>Day 14 - Maximal Adjacent Difference</title>
   </head>
   <body>
+    <div class="content">
+      <p>
+        Find the maximal absolute difference between any two of it's adjacent elements
+      </p>
+      <input type="text" id="number" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="arrayMaximalAdjacentDifference()">
+        Find
+      </button>
+    </div>
+
     <!-- Given an array of integers, find the maximal absolute difference between any two of it's adjacent elements. -->
     <script>
-      function arrayMaximalAdjacentDifference(nums) {
+      function arrayMaximalAdjacentDifference() {
+        const nums = document.getElementById("number").value.split(" ");
         let maxDifference = 0;
         for (let i = 0; i < nums.length - 1; i++) {
           const absoluteDifference = Math.abs(nums[i] - nums[i + 1]);
@@ -14,7 +26,7 @@
             maxDifference = absoluteDifference;
           }
         }
-        return maxDifference;
+        document.getElementById("answer").innerHTML = maxDifference;
       }
     </script>
   </body>
