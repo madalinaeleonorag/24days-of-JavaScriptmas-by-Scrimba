@@ -1,18 +1,40 @@
+
 body {
-  background-color: #aeb8fe;
+  background: url(bg.jpg);
+  background-size: cover;
+  background-position: center;
   display: flex;
+}
+.content {
+  text-align-last: center;
+  background: white;
+  margin: auto;
+  width: 30%;
+  box-shadow: 0px 0px 0px 10px #16593775;
+  height: 50%;
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: "Brush Script MT";
+  font-size: 1.5rem;
+  margin: 24px;
 }
 
 .dice {
   width: 100px;
   height: 100px;
   border-radius: 10px;
-  background-color: #efe5dc;
-  margin: 100px;
+  background-color: #165937;
 }
 
 .dots {
   width: 15px;
+  border-radius: 50%;
   height: 15px;
   margin: 40px;
 }

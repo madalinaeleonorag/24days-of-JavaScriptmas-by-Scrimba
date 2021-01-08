@@ -4,16 +4,26 @@
     <title>Day 7 - Count vowel consonant</title>
   </head>
   <body>
-    <!-- Return the sum of all letters in the input string. -->
+    <div class="content">
+      <p>Count the vowels</p>
+      <input type="text" id="string" placeholder="Text" />
+      <div id="answer"></div>
+      <button class="calculate-button" onclick="countVowelConsonant()">
+        Count
+      </button>
+    </div>
+
+    
     <script>
-      function countVowelConsonant(str) {
+      function countVowelConsonant() {
+        const str = document.getElementById("string").value;
         const vowels = ["a", "e", "i", "o", "u"];
         const chars = str.split("");
-        return (total = chars.reduce((acc, char) => {
+        document.getElementById("answer").innerHTML = (total = chars.reduce((acc, char) => {
           if (vowels.includes(char)) {
             return acc + 1;
           }
-          return acc + 2;
+          return acc  ;
         }, 0));
       }
     </script>
