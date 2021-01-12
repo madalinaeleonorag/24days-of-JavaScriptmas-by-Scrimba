@@ -4,6 +4,8 @@ Level up JavaScript skills with a daily coding challenge from December 1st to 24
 
 Challenge available [HERE](https://scrimba.com/learn/adventcalendar)
 
+![''](./certification.png)
+
 1. Candies<br>
    Determine how many pieces of candy will be eaten by all te children together
 
